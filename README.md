@@ -15,6 +15,7 @@ Since a profile can be reused, this only needs to be done when a new profile is 
 This process will require some back and forth between AWS management console website and the terminal. 
 
 ```zsh
+yarn global add @aws-amplify/cli
 amplify configure
 ```
 ----
@@ -92,3 +93,10 @@ Amplify push
 
 
 Rename aws-exports.js to aws-exports.ts
+
+
+# Installtion Resources
+* The angular amplify installation had to be version locked, because there were updates made to latest while setting up this demo. To replicate this repo follow the instructions at the bottom of the gist file.
+
+- [NG Install Gist] (https://snippets.cacher.io/snippet/fed651e9e30d1cc6f2af)
+- [Tailwind for Angular] (https://www.bitovi.com/blog/tailwind-css-with-angular-v12-what-you-need-to-know)
