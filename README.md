@@ -2,6 +2,24 @@
 Template is an angular project set up to build a simple chat with Amplify.
 ## AWS Amplify Configuration
 
+----
+
+### AWS
+This section is not necessary for every project. It will require an AWS account, 
+which will require a credit card even for free-tier.
+
+We will also need to configure AWS account and IAM Profile if this hasn't already been done. 
+
+Since a profile can be reused, this only needs to be done when a new profile is necessary.
+
+This process will require some back and forth between AWS management console website and the terminal. 
+
+```zsh
+amplify configure
+```
+----
+
+
 Initialize Amplify for the app to begin configuration:
 
 ```zsh
@@ -24,16 +42,14 @@ Project information
 
 ? Initialize the project with the above configuration? (Y/n) n
 ```
-Answer all default except dist…change that to dis1/pico8 (name of project)
+Answer all default except dist…change that to dist/(name of project)
 
 ```zsh
 ...
-? Distribution Directory Path: dist/games
+? Distribution Directory Path: dist/templatechat
 ...
 ```
 Choose AWS Profile (default is fine)
-
-Rename aws-exports.js to aws-exports.ts
 
 Add Amplify Authentication module
 
@@ -66,13 +82,13 @@ message: String!
 ```
 
 Amplify push
-32. ? Are you sure you want to continue? (Y/n) Y
-33. ? Do you want to generate code for your newly created GraphQ
-    L API (Y/n) Y
-34. ? Choose the code generation language target (Use arrow keys)❯ angular
-35. Choose Default
-36. Enter Y
-37. Choose Default
-38. Choose Default
+ ? Are you sure you want to continue? (Y/n) Y
+ ? Do you want to generate code for your newly created GraphQL API (Y/n) Y
+ ? Choose the code generation language target (Use arrow keys)❯ angular
+ Choose Default
+ Enter Y
+ Choose Default
+ Choose Default
 
 
+Rename aws-exports.js to aws-exports.ts
