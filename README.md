@@ -1,27 +1,78 @@
-# Templatechat
+# Angular Amplify Template
+Template is an angular project set up to build a simple chat with Amplify.
+## AWS Amplify Configuration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
+Initialize Amplify for the app to begin configuration:
 
-## Development server
+```zsh
+amplify init
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+We need to change dist dir so can’t use default, answer no to that
 
-## Code scaffolding
+```zsh
+Project information
+| Name: games
+| Environment: dev
+| Default editor: Visual Studio Code
+| App type: javascript
+| Javascript framework: angular
+| Source Directory Path: src
+| Distribution Directory Path: dist
+| Build Command: npm run-script build
+| Start Command: ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+? Initialize the project with the above configuration? (Y/n) n
+```
+Answer all default except dist…change that to dis1/pico8 (name of project)
 
-## Build
+```zsh
+...
+? Distribution Directory Path: dist/games
+...
+```
+Choose AWS Profile (default is fine)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Rename aws-exports.js to aws-exports.ts
 
-## Running unit tests
+Add Amplify Authentication module
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```zsh
+amplify add auth
+```
 
-## Running end-to-end tests
+22. Choose Default configuration
+23. Choose Username
+24. No I am done
+25. Add Amplify API
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```zsh
+amplify add api
+```
 
-## Further help
+26. Choose GraphQL
+27. Choose Continue
+28. Choose Single object with fields (e.g., “Todo” with ID, name, des
+    cription)
+29. Enter Y
+30. Replace the model in the file just opened with:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```ts
+type Chat @model {
+id: ID!
+name: String!
+message: String!
+}
+```
+
+Amplify push
+32. ? Are you sure you want to continue? (Y/n) Y
+33. ? Do you want to generate code for your newly created GraphQ
+    L API (Y/n) Y
+34. ? Choose the code generation language target (Use arrow keys)❯ angular
+35. Choose Default
+36. Enter Y
+37. Choose Default
+38. Choose Default
+
+
