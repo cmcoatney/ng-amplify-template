@@ -1,1 +1,44 @@
-<p>chat works!</p>
+<div class="page">
+  <main class="grid">
+    <article *ngFor="let chat of chats">
+    
+      <div class="text chat">
+        <h3>{{ chat?.name }}</h3>
+        <p>{{ chat?.message }}</p>
+      </div>
+    </article>
+  </main>
+  <div class="form-container">
+  
+    <div class="form-body">
+      <form
+        autocomplete="off"
+        [formGroup]="createForm"
+        (ngSubmit)="onCreate(createForm.value)"
+      >
+        <div>
+          
+          <textarea type="text" formControlName="message" placeholder="Please type your message" autocomplete="off" rows="3" class="
+            form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+          "></textarea>
+        </div>
+    
+        <button type="submit" class="py-2 px-3 m-2 bg-blue-500 hover:bg-nav-hover-blue rounded-md text-white">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
